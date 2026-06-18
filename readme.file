@@ -1,0 +1,138 @@
+# Medical Management API
+
+## Project Name
+
+Medical Management API
+
+## Developed By
+
+Poojitha
+
+## Date
+
+18/06/2026
+
+## Project Description
+
+Medical Management API is a RESTful API developed using FastAPI and MySQL. The API allows users to manage patient records by performing CRUD (Create, Read, Update, Delete) operations.
+
+## Technologies Used
+
+* FastAPI
+* MySQL
+
+## Features
+
+* Add New Patient
+* View All Patients
+* View Patient by ID
+* Update Patient Details
+* Delete Patient Record
+
+## Patient Fields
+
+* Patient ID
+* Patient Name
+* Age
+* Gender
+* Disease
+* Doctor Name
+* Admission Date
+* Phone Number
+
+## Database Setup
+
+sql
+CREATE DATABASE medical_db;
+
+USE medical_db;
+
+CREATE TABLE patients (
+    patient_id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    gender VARCHAR(20) NOT NULL,
+    disease VARCHAR(100) NOT NULL,
+    doctor_name VARCHAR(100) NOT NULL,
+    admission_date DATE NOT NULL,
+    phone_number VARCHAR(15) NOT NULL
+);
+
+
+## Installation
+
+Install required packages:
+
+bash
+pip install fastapi uvicorn sqlalchemy pymysql pydantic
+
+
+## Run the Application
+
+bash
+uvicorn main:app --reload
+
+Application URL:
+
+http://127.0.0.1:8000
+
+
+Swagger Documentation:
+
+
+http://127.0.0.1:8000/docs
+
+
+## API Endpoints
+
+### Get All Patients
+
+http
+GET /patients
+
+
+### Get Patient By ID
+
+http
+GET /patients/{id}
+
+
+### Add New Patient
+
+http
+POST /patients
+
+
+### Update Patient
+
+http
+PUT /patients/{id}
+
+
+### Delete Patient
+
+http
+DELETE /patients/{id}
+
+
+## Sample Request Body
+
+json
+{
+  "patient_name": "Ravi",
+  "age": 32,
+  "gender": "Male",
+  "disease": "Headache",
+  "doctor_name": "Dr sanjay",
+  "admission_date": "2026-06-20",
+  "phone_number": "7865432906"
+}
+
+
+## Testing
+
+All API endpoints were tested successfully using Postman.
+
+## Conclusion
+
+The Medical Management API was successfully developed using FastAPI and MySQL. All CRUD operations were implemented and tested successfully.
